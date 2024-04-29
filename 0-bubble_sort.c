@@ -2,19 +2,6 @@
 #include <stdlib.h>
 #include "sort.h"
 /**
- * swap - swaps values
- * @a: the first element
- * @b: the second element
- */
-void swap(int *a, int *b)
-{
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-/**
  * bubble_sort - uses bubble sort to sort
  * @arr: the array
  * @size: location of the integer in array
@@ -25,6 +12,7 @@ void bubble_sort(int *arr, size_t size)
 	size_t i;
 	size_t j;
 	size_t flag;
+	size_t temp;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -37,7 +25,9 @@ void bubble_sort(int *arr, size_t size)
 			}
 			if (arr[j] > arr[j + 1])
 			{
-				swap(&arr[j], &arr[j + 1]);
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
 				print_array(arr, size);
 				flag = 1;
 			}
