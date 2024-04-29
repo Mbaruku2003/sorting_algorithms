@@ -10,14 +10,16 @@
  */
 void swap(int *arr, int i, int j)
 {
-	int temp = arr[i];
+	int temp;
+
+	temp = arr[i];
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
 /**
- * bubblesort - uses bubble sort to sort
+ * bubble_sort - uses bubble sort to sort
  * @arr: the array
- * @n: location of the integer in array
+ * @size: location of the integer in array
  * Return: void
  */
 void bubble_sort(int *arr, size_t size)
@@ -29,7 +31,7 @@ void bubble_sort(int *arr, size_t size)
 
 	for (i = 0; i < size - 1; i++)
 	{
-		for (j = 0; j < size - 1 - i; j++)
+		for (j = 0; j < size - i - 1; j++)
 		{
 			if (arr[j] > arr[j + 1])
 			{
