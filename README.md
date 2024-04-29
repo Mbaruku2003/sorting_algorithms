@@ -7,3 +7,4 @@ bucket sort
 bubble sort
 insertion sort
 selection sort
+radix sort
