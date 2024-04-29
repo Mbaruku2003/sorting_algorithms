@@ -33,7 +33,7 @@ void bubble_sort(int *arr, size_t size)
 		{
 			if (arr == NULL || size == 0)
 			{
-				return ;
+				return;
 			}
 			if (arr[j] > arr[j + 1])
 			{
