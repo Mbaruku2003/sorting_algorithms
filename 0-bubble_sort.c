@@ -2,19 +2,17 @@
 #include <stdlib.h>
 #include "sort.h"
 /**
- * swap - swaps integers
- * @arr: the array to be used
- * @i: the first element
- * @j: the second element
- * Return: void
+ * swap - swaps values
+ * @a: the first element
+ * @b: the second element
  */
-void swap(int *arr, int i, int j)
+void swap(int *a, int *b)
 {
 	int temp;
 
-	temp = arr[i];
-	arr[i] = arr[j];
-	arr[j] = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 /**
  * bubble_sort - uses bubble sort to sort
@@ -24,30 +22,25 @@ void swap(int *arr, int i, int j)
  */
 void bubble_sort(int *arr, size_t size)
 {
-	int swapped;
 	size_t i;	
-	size_t k;
 	size_t j;
+	size_t flag;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		swapped = 0;
-		for (j = 0; j < size - i - 1; j++)
+		flag = 0;
+		for (j = 0; j < size - 1 - i; j++)
 		{
 			if (arr[j] > arr[j + 1])
 			{
-				swap(arr, j, j + 1);
-				swapped = 1;
+				swap(&arr[j], &arr[j + 1]);
+				print_array(arr, size);
+				flag = 1;
 			}
 		}
-		if (!swapped)
+		if (flag == 0)
 		{
 			break;
 		}
-		for (k = 0; k < size; k++)
-		{
-			printf("%d ", arr[k]);
-		}
-		printf("\n");
 	}
 }
