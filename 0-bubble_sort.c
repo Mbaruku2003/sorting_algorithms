@@ -24,13 +24,14 @@ void swap(int *arr, int i, int j)
  */
 void bubble_sort(int *arr, size_t size)
 {
-	int swapped = 0;
-	size_t i;
-	size_t j;
+	int swapped;
+	size_t i;	
 	size_t k;
+	size_t j;
 
 	for (i = 0; i < size - 1; i++)
 	{
+		swapped = 0;
 		for (j = 0; j < size - i - 1; j++)
 		{
 			if (arr[j] > arr[j + 1])
